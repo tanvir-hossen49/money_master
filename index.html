@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Money Master</title>
+
+    <!-- ! Tailwind css link -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- ! Google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="w-full h-screen">
+    <h1
+      class="text-5xl text-center font-bold py-[37px] text-[#31A5AC]"
+      style="font-family: 'Montserrat'"
+    >
+      Money Master
+    </h1>
+    <div
+      class="main-container mx-[60px] pb-[75px] grid grid-cols-1 lg:grid-cols-2 gap-[73px]"
+    >
+      <div class="">
+        <img src="images/img-1.png" alt="" srcset="" class="w-full h-[880px]" />
+      </div>
+      <div class="lg:w-[542px] bg-[#F8F8F8]" style="font-family: 'Roboto'">
+        <!-- ! Income and expense -->
+        <div>
+          <!-- ! INCOME -->
+          <div class="text-center">
+            <h4 class="font-medium text-2xl mb-[30px] mt-[58px]">Income</h4>
+
+            <div>
+              <label class="mr-[15px] text-[18px]">Income:</label>
+              <input
+                type="number"
+                id="income"
+                placeholder="Enter Your Income"
+                min="0"
+                required
+                class="bg-[#DCDCDC] pl-[18px] py-[12px] text-[18px] font-[400]"
+              />
+            </div>
+          </div>
+          <!-- ! EXPENSE -->
+          <div class="text-center">
+            <h4 class="font-medium text-2xl mt-[27px] mb-[22px]">Expenses</h4>
+
+            <div class="mb-[20px] expense-input-field">
+              <label class="mr-[15px] text-[18px]">Food:</label>
+              <input
+                type="number"
+                placeholder="0"
+                min="0"
+                class="bg-[#DCDCDC] pl-[18px] py-[12px] text-[18px] font-[400]"
+              />
+            </div>
+            <div class="mb-[20px] expense-input-field">
+              <label class="mr-[15px] text-[18px]">Rent:</label>
+              <input
+                type="number"
+                placeholder="0"
+                min="0"
+                class="bg-[#DCDCDC] pl-[18px] py-[12px] text-[18px] font-[400]"
+              />
+            </div>
+            <div class="expense-input-field">
+              <label class="pr-[15px] text-[18px]">Clothes:</label>
+              <input
+                type="number"
+                placeholder="0"
+                min="0"
+                class="bg-[#DCDCDC] pl-[18px] py-[12px] text-[18px] font-[400] mr-[25px]"
+              />
+            </div>
+          </div>
+
+          <!-- ! CALCULATE BUTTON -->
+
+          <div class="text-center">
+            <button
+              type="submit"
+              id="calculate"
+              class="bg-[#59A5FF] text-white font-medium rounded-[4px] px-[57px] py-[14px] mt-[25px] text-[20px]"
+            >
+              Calculate
+            </button>
+          </div>
+        </div>
+
+        <!-- ! Total expense and balance -->
+        <div class="my-[30px] text-center">
+          <h3 class="text-[22px] font-medium mb-[30px]">
+            Total Expenses: <span id="totalExpense">0</span>
+          </h3>
+          <h3 class="text-[22px] font-medium">
+            Balance: <span id="balance">0</span>
+          </h3>
+        </div>
+
+        <!-- ! Savings amount -->
+        <div class="flex items-center justify-center">
+          <div>
+            <label class="mr-[15px] text-[18px]">Save:</label>
+            <input
+              type="number"
+              id="savingPercentage"
+              min="0"
+              class="bg-[#DCDCDC] w-[132px] h-[44px] text-center py-[12px] rounded-[2px] text-[18px] font-[400]"
+            />
+          </div>
+          <div class="mx-[15px]">
+            <span>%</span>
+          </div>
+          <div>
+            <button
+              type="submit"
+              id="save"
+              class="bg-[#59A5FF] text-white font-medium rounded-[4px] px-[65px] py-[10px] text-[20px]"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+
+        <!-- ! Saving and remaining amount -->
+        <div class="my-[30px] text-center">
+          <h3 class="text-[22px] font-medium mb-[20px]">
+            Saving Amount: <span id="parcentageAmount">0</span>
+          </h3>
+          <h3 class="text-[22px] font-medium">
+            Remaining Balance: <span id="remainingBalance">0</span>
+          </h3>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/app.js"></script>
+  </body>
+</html>
