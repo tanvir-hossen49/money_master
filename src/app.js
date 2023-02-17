@@ -1,12 +1,11 @@
 // ! Global variables
 const income = document.getElementById("income");
 const balance = document.getElementById("balance");
-const balanceAmount = parseFloat(balance.innerText);
-const incomeAmount = parseFloat(income.value);
 
 // ! Calculate total expenses and balance
 function calculate() {
   const inputEle = document.querySelectorAll(".expense-input-field input");
+  const incomeAmount = parseFloat(income.value);
 
   let expense = 0;
   inputEle.forEach((x) => {
@@ -27,7 +26,10 @@ function calculate() {
 
 // ! Calcultate saving and remaining amount
 function savingAmount() {
-  const parcent = document.getElementById("savingPercentage").value;
+  let parcent = document.getElementById("savingPercentage").value;
+  parcent = parcent === "" ? 0 : parcent;
+  const incomeAmount = parseFloat(income.value);
+  const balanceAmount = parseFloat(balance.innerText);
   const parcentAmount = (parseInt(parcent) * incomeAmount) / 100;
 
   if (parcentAmount > balanceAmount || income.value === "") {
